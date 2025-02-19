@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Users/test/Documents/tech xavier's/PYEXPO-DEMO/login.css">
-    <title>Xavier's marrket</title>
+    <link rel="stylesheet" href="login.css">
+    <title>Xavier's Market</title>
 </head>
 <body>
-    <div class="sign up">
-        <h1>sign up</h1>
+    <div class="signup">
+        <h1>Sign Up</h1>
         <br>
-        <label for="Username">Username: </label>
-        <input type="text" name="Username" id="Username" placeholder="Enter Username">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username" placeholder="Enter Username">
         <br>
-        <label for="G-mail">G-mail</label>
-        <input type="text" name="Gmail" id="G-mail" placeholder="G-mail">
+        <label for="gmail">G-mail:</label>
+        <input type="text" name="gmail" id="gmail" placeholder="Enter G-mail">
         <br>
-        <label for="Phone number">Phone number:</label>
-        <input type="text" name="phone number" id="Phone number" placeholder="Phone number">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx xxx xxxx" required>
         <br>
-        <label for="password sign up">Password</label>
-        <input type="password" name="password sign up" id="password sign up" placeholder="Password">
+        <label for="passwordSignUp">Password:</label>
+        <input type="password" name="passwordSignUp" id="passwordSignUp" placeholder="Password">
         <br>
-        <label for="re-password sign up">Re-enter the password:</label>
-        <input type="password" name="re-password sign up" id="re-password sign up" placeholder="Re-enter password">
+        <label for="rePasswordSignUp">Re-enter Password:</label>
+        <input type="password" name="rePasswordSignUp" id="rePasswordSignUp" placeholder="Re-enter password">
         <br>
-        <label for="Role">Role:</label>
-        <input type="text" name="Role" id="Role" list="Role-list">
-        <datalist id="Role-list">
+        <label for="role">Role:</label>
+        <input type="text" name="role" id="role" list="role-list">
+        <datalist id="role-list">
             <option value="Farmer">
             <option value="Consumer">
         </datalist>
         <br>
-        <button id="loginButton">log in</button>
+        <button id="signupButton">Sign up</button>
     </div>
+
+    <script src="signup.js"></script>
 </body>
 </html>
