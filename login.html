@@ -1,82 +1,23 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="/Users/test/Documents/HTML/html webpage/login.css" type="text/css">
-      <title>Xavier's Market</title>
-      
-  </head>
-  <body>
-      <table>
-          <tr>
-              <th><h1>LOGIN</h1></th>
-              <th><h1>SIGN UP</h1></th>
-          </tr>
-          <tr>
-              <td>
-                  <label for="Username">Username or G-mail id: </label>
-                  <input type="text" name="Username" id="Username" placeholder="Username or G-mail id">
-              </td>
-              <td>
-                  <label for="Username">Username: </label>
-                  <input type="text" name="Username" id="Username" placeholder="Enter Username">
-              </td>
-          </tr>
-          <tr>
-              <td class="password-container">
-                  <label for="password">Password:</label>
-                  <input type="password" name="password" id="password" placeholder="Password">
-                  <i class="eye-icon" onclick="PasswordVisibility()">👁️</i>
-              </td>
-              <td>
-                  <label for="G-mail">G-mail</label>
-                  <input type="text" name="Gmail" id="G-mail" placeholder="G-mail">
-              </td>
-          </tr>
-          <tr>
-              <td>&nbsp;</td>
-              <td>
-                  <label for="Phone number">Phone number:</label>
-                  <input type="text" name="phone number" id="Phone number" placeholder="Phone number">
-              </td>
-          </tr>
-          <tr>
-              <td>&nbsp;</td>
-              <td class="password-container">
-                  <label for="password sign up">Password</label>
-                  <input type="password" name="password sign up" id="password sign up" placeholder="Password">
-                  <i class="eye-icon" onclick="SignupPasswordVisibility()">👁️</i>
-              </td>
-          </tr>
-          <tr>
-              <td>&nbsp;</td>
-              <td class="password-container">
-                  <label for="re-password sign up">Re-enter the password:</label>
-                  <input type="password" name="re-password sign up" id="re-password sign up" placeholder="Re-enter password">
-                  <i class="eye-icon" onclick="reSignupPasswordVisibility()">👁️</i>
-              </td>
-          </tr>
-          <tr>
-              <td>&nbsp;</td>
-              <td>
-                  <label for="Role">Role:</label>
-                  <input type="text" name="Role" id="Role" list="Role-list">
-                  <datalist id="Role-list">
-                      <option value="Farmer">
-                      <option value="Consumer">
-                  </datalist>
-              </td>
-          </tr>
-          <tr>
-              <td><button id="Login">Log in</button></td>
-              <td><button id="Sign up">Sign up</button></td>
-          </tr>
-      </table>
-  
-      <script src="login.js">
-          
-      </script>
-  </body>
-  </html>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xavier's market</title>
+</head>
+<body>
+    <h1>Log in </h1>
+    <label for="loginUsername">Username:</label>
+    <input type="text" name="loginUsername" id="loginUsername" placeholder="Username">
+    <br>
+    <label for="loginPassword">Password:</label>
+    <input type="text" name="loginPassword" id="loginPassword" placeholder="password">
+    <br>
+    <button id="loginButton">log in</button>
+    <h4>or</h4>
+    <p>
+        create a new account?<a href="/Users/test/Documents/tech xavier's/PYEXPO-DEMO/sign up.html">sign up</a>
+    </p>
+    
+</body>
+</html>
