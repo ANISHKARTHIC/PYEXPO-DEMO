@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Placement - E-Shopping</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            width: 40%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px black;
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        h2 {
+            color: black;
+            margin-bottom: 20px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        input, select {
+            background: lightgray;
+            color: black;
+        }
+        input:focus, select:focus {
+            outline: none;
+            background: gray;
+        }
+        button {
+            background: navy;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px black;
+        }
+        button:hover {
+            background: darkblue;
+            transform: translateY(-2px);
+        }
+        #confirmation {
+            color: green;
+            font-weight: bold;
+            display: none;
+            margin-top: 15px;
+        }
+        .product-section {
+            width: 40%;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px black;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-section">
+        <h2>Our Products</h2>
+        <ul>
+            <li>Laptop - ₹100,000</li>
+            <li>Mobile Phone - ₹50,000</li>
+            <li>Headphones - ₹10,000</li>
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Place Your Order</h2>
+        <form id="orderForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="address" placeholder="Shipping Address" required>
+            <input type="text" id="city" placeholder="City" required>
+            <input type="text" id="state" placeholder="State" required>
+            <input type="text" id="zip" placeholder="ZIP Code" required>
+            <select id="product" required>
+                <option value="">Select Product</option>
+                <option value="Laptop" data-price="100000">Laptop - ₹100,000</option>
+                <option value="Mobile Phone" data-price="50000">Mobile Phone - ₹50,000</option>
+                <option value="Headphones" data-price="10000">Headphones - ₹10,000</option>
+            </select>
+            <input type="number" id="quantity" placeholder="Quantity" min="1" required>
+            <p>Total Price: ₹<span id="totalPrice">0</span></p>
+            <button type="submit">Place Order</button>
+        </form>
+        <p id="confirmation"></p>
+    </div>
+
+    <script>
+        document.getElementById("product").addEventListener("change", function() {
+            let selectedOption = this.options[this.selectedIndex];
+            let price = selectedOption.getAttribute("data-price");
+            let quantity = document.getElementById("quantity").value || 1;
+            document.getElementById("totalPrice").innerText = price * quantity;
+        });
+
+        document.getElementById("quantity").addEventListener("input", function() {
+            let selectedOption = document.getElementById("product").options[document.getElementById("product").selectedIndex];
+            let price = selectedOption.getAttribute("data-price") || 0;
+            document.getElementById("totalPrice").innerText = price * this.value;
+        });
+
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let product = document.getElementById("product").value;
+            let quantity = document.getElementById("quantity").value;
+            let totalPrice = document.getElementById("totalPrice").innerText;
+            if (name && product && quantity) {
+                document.getElementById("confirmation").innerText = `Thank you, ${name}! Your order for ${quantity} ${product}(s) has been placed. Total Cost: ₹${totalPrice}`;
+                document.getElementById("confirmation").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
