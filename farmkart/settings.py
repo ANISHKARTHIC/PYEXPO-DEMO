@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-pft_v$s9#s@1xwpiv51hm#0@%%t85f=3#)#l^c^up5y%!70(&0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["farmkart.onrender.com"]
+ALLOWED_HOSTS = ["farmkart.onrender.com",'127.0.0.1', 'localhost']
+
 
 
 # Application definition
@@ -130,7 +131,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = BASE_DIR/'static'
+STATICFILES_DIRS = [
+    str(BASE_DIR / "static"),  # Convert Path object to string inside a list
+]
+
 
 #media files config
 
